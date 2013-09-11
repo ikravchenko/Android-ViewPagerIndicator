@@ -68,10 +68,24 @@
         <java.version>1.6</java.version>
         <android.version>4.1.1.4</android.version>
         <android.platform>16</android.platform>
-        <android.support.version>r7</android.support.version>
+        <android.support.version>11</android.support.version>
 
         <android-maven.version>3.3.0</android-maven.version>
     </properties>
+
+	<repositories>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://nexus.doo.net/nexus/content/repositories/releases/</url>
+            <layout>default</layout>
+        </repository>
+
+        <repository>
+            <id>nexus-snapshots</id>
+            <url>http://nexus.doo.net/nexus/content/repositories/snapshots/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
 
     <dependencyManagement>
         <dependencies>
@@ -82,10 +96,10 @@
             </dependency>
 
             <dependency>
-                <groupId>com.google.android</groupId>
-                <artifactId>support-v4</artifactId>
-                <version>${android.support.version}</version>
-            </dependency>
+            	<groupId>android.support</groupId>
+            	<artifactId>compatibility-v4</artifactId>
+				<version>${android.support.version}</version>
+        	</dependency>
         </dependencies>
     </dependencyManagement>
 
